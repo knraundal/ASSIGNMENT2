@@ -1,0 +1,320 @@
+<html>
+
+<head>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" type="text/css" href="css.css">
+
+
+</head>
+
+<body>
+
+<header>
+<div class="headerDiv">
+<div class="headerResponsive">
+<img class="logo" src="logo.png">
+<p class="orgName" id="orgName">KR TOURS AND <br>TRAVELS PVT.LTD.</p>
+<div class="headimage">
+<img class="headimg" src="headimg.png">
+</div>
+</div>
+</header>
+
+
+<div class="topnav">
+	<a  href="#sec1">Home</a>
+	<a href="#sec2">Registration form</a>
+	<a  href="#sec3">Show Registrations</a>
+	
+	
+       
+        
+</div>
+
+<br>
+<br>
+
+<div class="conatiner">
+<div class="overviewDiv">
+<div class="horizontalSplit" id="sec1">
+<h2>OVERVIEW</h2>
+<p id="overviewText">Booking a travel package when it comes to travelling to new parts of the country 
+or the world is a practice that has slowly gained a lot of popularity. Today, whenever it is about 
+planning a holiday trip, many people have a preferred travel portal in India that is best for their 
+specific needs. Owing to the faith bestowed in our travel services by our patrons, KR TOURS AND TRAVELS has 
+established its niche and is counted among the top 10 travel agencies in Mumbai.</p>
+</div>
+<p><br> <b>WHY TO CHOOSE KR TOURS AND TRAVELS?</p>
+<div id="counterDiv">
+<div class="counterFace">
+<img class="counterImage" src="pic1.png" alt="Affordable Journeys">
+<h4>Affordable<br>Journeys</h4>
+</div>
+<div class="counterFace">
+<img class="counterImage" src="pic2.png" alt="Guided Experience">
+<h4>Guided<br>Experience</h4>
+</div>
+<div class="counterFace">
+<img class="counterImage" src="pic3.png" alt="All Inclusive">
+<h4>All<br>Inclusive</h4>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+ <div class="event-registration" id="sec2">
+    <h2>Book Your Tour</h2>
+    <form id="event-registration-form" method="POST" action="">
+      
+      <fieldset>
+        <h3>Personal Information</h3>
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" />
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" />
+	<label for="mobileno">Mobile Number</label>
+        <input type="text" id="mobileno" name="mobileno" />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+        <label for="street">Street Address</label>
+        <input type="text" id="street" name="street" />
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" />
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" />
+	
+    Male:- <input type="checkbox" id="myCheck1" value="Male">
+     Female: -<input type="checkbox" id="myCheck2" value="Female"><br><br>
+	 <label for="age">Age</label>
+        <input type="text" id="age" name="age" />
+	</fieldset>
+
+	<form id="event-registration-form" method="POST" action="">
+      
+      <fieldset>
+        <h3>Tour Information</h3>
+        <label for="departure-name">Departure Venue</label>
+        <input type="text" id="departure-name" name="departure-name" />
+        <label for="destination-name">Destination Venue</label>
+        <input type="text" id="destination-name" name="destination-name" />
+	<label for="travel-mode">Mode of Travel</label>
+        <input type="text" id="travel-mode" name="travel-mode" />
+        <label for="accomodation">Accomodation Type (AC/Non-AC)</label>
+        <input type="text" id="accomodation" name="accomodation" />
+        <label for="subject">Expectations:-</label>
+        <textarea id="textarea" placeholder="Write your Expectations.." style="height:100% ; width: 100%" ></textarea>
+	
+	<input type="checkbox" id="myCheck" >
+        <label for="myCheck"><small id="check" class = "form-text text-muted" >By clicking here you will accept all the terms and conditions of the organisation </small></label><br>
+	</fieldset>
+
+<div class="container">
+        <button type="button" class = "btn btn-dark" onclick="myFunct();">SUBMIT</button>
+</div>
+	</form>
+</div>
+
+<div class="container" id="sec3">
+      <div class="content-first">
+        <h2 class="text">LIST OF PEOPLE REGISTERED:- </h2>
+        <table id="myTable"></table>
+        
+      </div>
+</div>
+<br>
+<footer>
+<div id="footerDiv">
+
+
+<p class="footerTitle">Location</p>
+<p class="footerText">"MALEGAON"</p>
+<p class="footerTitle">Phone</p>
+<p class="footerText">9156744120</p>
+<p class="footerTitle">Email</p>
+<p class="footerText">knraundal@mitaoe.ac.in</p>
+
+</div>
+</div>
+</footer>
+
+<script>
+function myFunct() {
+
+  var z = document.getElementById("first-name").value;
+  if (z == "")
+  {
+    alert("First-Name must be filled out");
+    return false;
+  }
+  var z = document.getElementById("last-name").value;
+  if (z == "")
+  {
+    alert("Last-Name must be filled out");
+    return false;
+  }
+  var zz = document.getElementById("mobileno").value;
+  if (zz == "")
+  {
+    alert("Phone Number should be filled");
+    return false;
+  }
+  y = parseInt(zz);
+  if(y>10000000000 || y <1000000000 || isNaN(zz))
+  {
+    alert("Enter a valid phone number");
+    return false;
+  }
+  var z = document.getElementById("email").value;
+  if (z == "")
+  {
+    alert("EMAIL must be filled out");
+    return false;
+  }
+  var n = z.includes("@");
+  if(n==false)
+  {
+    alert("Enter a valid Email address")
+    return false
+  }
+ var z = document.getElementById("street").value;
+  if (z == "")
+  {
+    alert("Street must be filled out");
+    return false;
+  }
+ var z = document.getElementById("city").value;
+  if (z == "")
+  {
+    alert("city must be filled out");
+    return false;
+  }
+ var z = document.getElementById("state").value;
+  if (z == "")
+  {
+    alert("State must be filled out");
+    return false;
+  }
+
+ 
+
+  var checkBox = document.getElementById("myCheck1");
+  var checkBox1 = document.getElementById("myCheck2");
+  if (checkBox.checked == false && checkBox1.checked == false )
+  {
+    alert("Please select the checkbox");
+    return false;
+  
+  }
+  if (checkBox.checked == true && checkBox1.checked == true )
+  {
+    alert("Please select One checkbox i.e Either Male or Female");
+    return false;
+  
+  }
+ var z = document.getElementById("age").value;
+  if (z == "")
+  {
+    alert("Age must be filled out");
+    return false;
+  }
+  zz = parseInt(z);
+  if (isNaN(zz)) 
+  {
+    alert("Enter a valid Age");
+    return false;
+  }
+var z = document.getElementById("departure-name").value;
+  if (z == "")
+  {
+    alert("Departure must be filled out");
+    return false;
+  }
+var z = document.getElementById("destination-name").value;
+  if (z == "")
+  {
+    alert("Destination must be filled out");
+    return false;
+  }
+var z = document.getElementById("travel-mode").value;
+  if (z == "")
+  {
+    alert("Travel mode must be filled out");
+    return false;
+  }
+var z = document.getElementById("accomodation").value;
+  if (z == "")
+  {
+    alert("Accomodation must be filled out");
+    return false;
+  }
+   var z = document.getElementById("textarea").value;
+  if (z == "" || z.length<50)
+  {
+    alert("Write More than 50 words in Expectations....");
+    return false;
+  }
+  var checkBox = document.getElementById("myCheck");
+  if (checkBox.checked == false)
+  {
+    alert("Please select the checkbox");
+    return false;
+  }
+
+ alert("Thank you for registering a tour. Happy Journey.")
+
+  let newdate=new Date();
+  console.log(newdate);
+  let hour = newdate.getHours();
+  console.log("The hours is:"+ hour);
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  var cell8 = row.insertCell(7);
+  var cell9 = row.insertCell(8);
+  
+  cell1.innerHTML = document.getElementById("first-name").value;
+  cell2.innerHTML = document.getElementById("last-name").value;
+  cell3.innerHTML = document.getElementById("mobileno").value;
+  cell4.innerHTML = document.getElementById("email").value;
+  cell5.innerHTML = document.getElementById("departure-name").value;
+  cell6.innerHTML = document.getElementById("destination-name").value;
+  cell7.innerHTML = document.getElementById("travel-mode").value;
+  cell8.innerHTML = document.getElementById("accomodation").value;
+  cell9.innerHTML = hour;
+ 
+
+  document.getElementById("first-name").value = "";
+  document.getElementById("last-name").value = "";
+  document.getElementById("mobileno").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("street").value = "";
+  document.getElementById("city").value = "";
+  document.getElementById("state").value = "";
+  document.getElementById("age").value = "";
+  document.getElementById("departure-name").value = "";
+  document.getElementById("destination-name").value = "";
+  document.getElementById("travel-mode").value = "";
+  document.getElementById("accomodation").value = "";
+ 
+  document.getElementById("textarea").value = "";
+  
+
+  document.getElementById("myCheck").checked = false;
+  document.getElementById("myCheck1").checked = false;
+  document.getElementById("myCheck2").checked = false;
+
+}
+
+</script>
+</html>
